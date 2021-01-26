@@ -8,6 +8,9 @@ export default function SearchForm() {
 
 const { jobList,setSearchDataInput, getJobList } = useContext(SearchContext)
 
+function handleOnClick(e) {
+return getJobList()
+}
 
 return (
   <div className="wrapper2">
@@ -16,7 +19,7 @@ return (
         placeholder="Looking for a new job..."
         onChange={(e) => setSearchDataInput(e.target.value)}
       />
-      <button className="btn" onClick={() => getJobList()}>Search</button>
+      <button className="btn" onClick={handleOnClick}>Search</button>
   
     {jobList && <JobList jobList={jobList} />}
   </div>

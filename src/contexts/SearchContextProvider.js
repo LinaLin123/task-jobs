@@ -8,16 +8,14 @@ export default function SearchContextProvider({ children }) {
   const [alreadySearchResults] = useState(new Map()); 
 
   function replaceInputValueSpaceToPlus() {
-    return searchDataInput.replaceAll(" ", "+");
+    return searchDataInput.replace(/ /g, "+");
   }
 
   function getJobList() {
     const formattedSearchInput = replaceInputValueSpaceToPlus();
     if (alreadySearchResults.has(formattedSearchInput)) {
-      console.log("jag hämtar från cachen")
       setJobList(alreadySearchResults.get(formattedSearchInput))
     } else {
-      console.log("jag måste hämta från api")
       const url = `https://us-central1-wands-2017.cloudfunctions.net/githubjobs?description=${formattedSearchInput}`;
       fetch(url)
         .then((res) => res.json())
