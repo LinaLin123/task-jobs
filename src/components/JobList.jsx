@@ -8,9 +8,9 @@ export default function JobList({ jobList }) {
           return <p>No jobs found</p>;
         } else {
           return jobList.map(jobItem => {
-            return <JobItem key={jobItem.id} data={jobItem} />;
+            return <JobItem key={jobItem.id} job={jobItem} />;
           });
         }
       }
-      return <div><ul>{jobList && renderList()}</ul></div>;
+      return <div>{jobList && renderList()}</div>;
     }
