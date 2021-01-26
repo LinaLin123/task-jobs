@@ -12,5 +12,5 @@ export default function JobList({ jobList }) {
           });
         }
       }
-      return <div>{jobList && renderList()}</div>;
+      return <div className="container">{jobList && renderList()}</div>;
     }

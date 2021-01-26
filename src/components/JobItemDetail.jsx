@@ -1,4 +1,5 @@
 import React from 'react'
+import '../App.css';
 
 
 export default function JobItemDetail({ job }) {
@@ -6,7 +7,7 @@ export default function JobItemDetail({ job }) {
 
 
     return (
-        <div>
+        <div className="itemDetailWrapper">
      <h2>{job.title}</h2>
    <strong>{job.type}</strong>
         <br></br>

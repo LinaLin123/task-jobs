@@ -19,6 +19,8 @@ const fetchJob = () => {
     .then((res) => res.json())
     .then((data) => setJob(data));
 }
+
+
     return (
         <div>
       {job && <JobItemDetail job={job} />}

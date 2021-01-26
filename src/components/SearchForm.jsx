@@ -10,17 +10,15 @@ const { jobList,setSearchDataInput, getJobList } = useContext(SearchContext)
 
 
 return (
-  <div>
-    <div className="wrapper2">
+  <div className="wrapper2">
       <input className="searchInput"
         type="text"
         placeholder="Looking for a new job..."
         onChange={(e) => setSearchDataInput(e.target.value)}
       />
       <button className="btn" onClick={() => getJobList()}>Search</button>
-    </div>
-
-    <div className="container">{jobList && <JobList jobList={jobList} />}</div>
+  
+    {jobList && <JobList jobList={jobList} />}
   </div>
 );
 }
